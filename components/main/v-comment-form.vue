@@ -1,21 +1,23 @@
 <template>
-  <el-form :model="controls" :rules="rules" ref="form" @submit.native.prevent="onSubmit">
+  <el-form ref="form" :model="controls" :rules="rules" @submit.native.prevent="onSubmit">
     <h1>Добавить комментарий</h1>
     <el-form-item label="Ваше имя" prop="name">
-      <el-input v-model="controls.name"/>
+      <el-input v-model="controls.name" />
     </el-form-item>
     <el-form-item label="Текст комментария" prop="text">
-      <el-input v-model="controls.text" type="textarea" resize="none" :rows="2"/>
+      <el-input v-model="controls.text" type="textarea" resize="none" :rows="2" />
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" round native-type="submit">Добавить комментарий</el-button>
+      <el-button type="primary" round native-type="submit">
+        Добавить комментарий
+      </el-button>
     </el-form-item>
   </el-form>
 </template>
 
 <script>
 export default {
-  name: 'v-comment-form',
+  name: 'VCommentForm',
   props: {
     postId: {
       type: String,
